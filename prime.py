@@ -1,18 +1,12 @@
-a=int(input("Enter the limit:"))
-b=[]
-for i in range(1,a):
-    count=0
-    for j in range(1,i):
-        if i%j==0:
-            count=count+1
-    if count==1:
-        b.append(i)
-    count=0    
-num=0
-su=0
-for k in b:
-    su=su+k
-    for l in b[b.index(k)+1:]:
-        if su==l:
-            num=num+1
-print("the continous sum is ",num)
+a, o=[int(x) for x in input("enter the nunber of samples and range : ").split()]
+b=[int(x) for x in input("enter the samples").split()]
+arra=[]
+for y in range(o):
+    count=[]
+    c,d=[int(x) for x in input("{}-enter the upper and lower range : ".format(y+1)).split()]
+    q=0
+    for x in b:
+        if x in range(c,d):
+            count.append(q+1)
+    arra.append(sum(count))    
+print(*arra,sep=" ")  
